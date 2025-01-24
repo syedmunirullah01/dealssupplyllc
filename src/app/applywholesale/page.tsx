@@ -59,7 +59,8 @@ const ApplyWholesale = () => {
         Welcome to Deals Supply LLC, your premier destination for high-quality
         products and exceptional service. We cater exclusively to retail
         companies and charitable organizations with valid Federal Employer
-        Identification Numbers (FEIN)/Tax IDs and the necessary seller's permit.
+        Identification Numbers (FEIN)/Tax IDs and the necessary seller&apos;s
+        permit.
       </p>
 
       <form onSubmit={handleSubmit} className="space-y-6">
@@ -253,7 +254,7 @@ const ApplyWholesale = () => {
             htmlFor="sellerPermit"
             className="block text-sm font-medium text-gray-600"
           >
-            Upload Seller's Permit
+            Upload Seller&apos;s Permit
           </label>
           <input
             type="file"
