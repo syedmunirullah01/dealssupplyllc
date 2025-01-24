@@ -1,17 +1,29 @@
 "use client";
-import React, { useState } from "react";
-import Link from "next/link"; // Import Link from next/link
-import { FiChevronDown, FiMenu, FiX } from "react-icons/fi"; // Import the React icon
+import React, { useState, useRef } from "react";
+import Link from "next/link";
+import { FiChevronDown, FiMenu, FiX } from "react-icons/fi";
 
 const Navbar: React.FC = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false); // Mobile menu state
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const dropdownTimeout = useRef<NodeJS.Timeout | null>(null); // Use ref to store timeout id
+
+  const handleMouseEnter = () => {
+    if (dropdownTimeout.current) {
+      clearTimeout(dropdownTimeout.current); // Clear any existing timeout if mouse re-enters
+    }
+    setIsDropdownOpen(true); // Open the dropdown immediately
+  };
+
+  const handleMouseLeave = () => {
+    dropdownTimeout.current = setTimeout(() => {
+      setIsDropdownOpen(false); // Close the dropdown after a slight delay
+    }, 200); // Adjust the delay time (in milliseconds) as needed
+  };
 
   return (
     <nav className="w-full bg-white text-black py-4 px-6 border-b border-gray-300">
-      {/* Container for content, max width applied here */}
       <div className="max-w-screen-lg mx-auto flex justify-between items-center">
-        {/* Center - Navigation Links */}
         <div className="hidden md:flex items-center space-x-12">
           <Link href="/" className="ml-6 hover:text-gray-300">
             Home
@@ -19,18 +31,20 @@ const Navbar: React.FC = () => {
 
           {/* Dropdown Menu for All Categories */}
           <div
-            className="relative"
-            onMouseEnter={() => setIsDropdownOpen(true)}
-            onMouseLeave={() => setIsDropdownOpen(false)}
+            className="relative group"
+            onMouseEnter={handleMouseEnter} // Open dropdown on hover
+            onMouseLeave={handleMouseLeave} // Close dropdown with delay
           >
-            <button className="hover:text-gray-300">All Categories</button>
-            <button className="ml-2 text-gray-700 hover:text-gray-500">
+            <button className="hover:text-gray-300 flex items-center">
+              All Categories
               <FiChevronDown
-                className={`transition-transform duration-200 ${
+                className={`ml-2 transition-transform duration-200 ${
                   isDropdownOpen ? "rotate-180" : ""
                 }`}
               />
             </button>
+
+            {/* Dropdown Menu */}
             {isDropdownOpen && (
               <div className="absolute top-full left-0 mt-2 bg-white text-gray-800 shadow-lg rounded-md w-48 z-50">
                 <ul>
@@ -83,22 +97,20 @@ const Navbar: React.FC = () => {
           </Link>
         </div>
 
-        {/* Right Side - Responsive Menu Button */}
         <div className="md:hidden">
           <button
             className="text-black hover:text-gray-300"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} // Toggle mobile menu
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? (
-              <FiX className="text-2xl" /> // Close icon
+              <FiX className="text-2xl" />
             ) : (
-              <FiMenu className="text-2xl" /> // Menu icon
+              <FiMenu className="text-2xl" />
             )}
           </button>
         </div>
       </div>
 
-      {/* Mobile Menu */}
       {isMobileMenuOpen && (
         <div className="md:hidden mt-4 space-y-4">
           <Link
