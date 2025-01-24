@@ -65,10 +65,6 @@ const Hero: React.FC = () => {
               <h1 className="text-4xl sm:text-3xl font-bold">
                 Unlock Massive Savings on Bulk Purchases!
               </h1>
-              <p className="mt-2 font-bold text-blue-200 text-sm sm:text-base">
-                At Amazon FBA Supplier, we&apos;re your trusted wholesale
-                distribution partner. 
-              </p>
               <button className="mt-4 bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700">
                 Apply for Bulk Discounts
               </button>
