@@ -284,12 +284,13 @@ const ProductPage = () => {
   return (
     <div className="max-w-screen-lg mx-auto px-6 py-8">
       <div className="flex flex-col md:flex-row gap-10 bg-white p-6 rounded-lg shadow-lg">
-        <div className="md:w-1/2 mx-auto relative w-[200px] h-[200px] sm:w-full sm:h-full">
+        <div className="md:w-1/2 mx-auto relative w-full">
           <Image
             src={product.image}
             alt={product.name}
-            width={500} // Setting width to 200
-            height={500} // Setting height to 200
+            layout="responsive"
+            width={500} // These values are aspect ratios and won't limit responsiveness
+            height={500}
             className="rounded-xl object-cover hover:drop-shadow-xl"
             priority
           />
