@@ -6,7 +6,6 @@ import Image from "next/image"; // For optimized image rendering
 import { BsCartDash } from "react-icons/bs"; // Cart icon for the button
 import Link from "next/link"; // Link component for navigation to the cart
 import { FaStar, FaStarHalfAlt, FaRegStar } from "react-icons/fa"; // Star icons for rating
-import BottomBar from "@/components/BottomBar";
 import Banner from "@/components/Banner";
 
 // Sample product data (replace with actual API or state management)
