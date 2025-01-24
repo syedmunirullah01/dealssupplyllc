@@ -46,30 +46,62 @@ const Navbar: React.FC = () => {
 
             {/* Dropdown Menu */}
             {isDropdownOpen && (
-              <div className="absolute top-full left-0 mt-2 bg-white text-gray-800 shadow-lg rounded-md w-48 z-50">
+              <div className="absolute top-full left-0 mt-2 bg-white text-gray-800 shadow-lg rounded-lg w-56 z-50 transition-opacity duration-300 opacity-100">
                 <ul>
                   <li>
                     <Link
-                      href="/category-1"
-                      className="block px-4 py-2 hover:bg-gray-200"
+                      href="/categories"
+                      className="block px-6 py-3 hover:bg-gray-200 rounded-md transition-all duration-200"
                     >
-                      Category 1
+                      Beauty
                     </Link>
                   </li>
                   <li>
                     <Link
-                      href="/category-2"
-                      className="block px-4 py-2 hover:bg-gray-200"
+                      href="/categories"
+                      className="block px-6 py-3 hover:bg-gray-200 rounded-md transition-all duration-200"
                     >
-                      Category 2
+                      Health & Personal Care
                     </Link>
                   </li>
                   <li>
                     <Link
-                      href="/category-3"
-                      className="block px-4 py-2 hover:bg-gray-200"
+                      href="/categories"
+                      className="block px-6 py-3 hover:bg-gray-200 rounded-md transition-all duration-200"
                     >
-                      Category 3
+                      Garden
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="/categories"
+                      className="block px-6 py-3 hover:bg-gray-200 rounded-md transition-all duration-200"
+                    >
+                      Baby Products
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="/categories"
+                      className="block px-6 py-3 hover:bg-gray-200 rounded-md transition-all duration-200"
+                    >
+                      Electronics & Photo
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="/categories"
+                      className="block px-6 py-3 hover:bg-gray-200 rounded-md transition-all duration-200"
+                    >
+                      Stationery & Office Supplies
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="/categories"
+                      className="block px-6 py-3 hover:bg-gray-200 rounded-md transition-all duration-200"
+                    >
+                      Home & Kitchen
                     </Link>
                   </li>
                 </ul>
@@ -126,6 +158,13 @@ const Navbar: React.FC = () => {
             onClick={() => setIsMobileMenuOpen(false)}
           >
             About
+          </Link>
+          <Link
+            href="/categories"
+            className="block text-lg hover:text-gray-300"
+            onClick={() => setIsMobileMenuOpen(false)}
+          >
+            All Categoies
           </Link>
           <Link
             href="/products"

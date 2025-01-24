@@ -1,5 +1,6 @@
-"use client"
-import React, { useState, useEffect } from "react";
+"use client";
+import React, { useState, useEffect, useCallback } from "react";
+import Image from "next/image"; // Import next/image for optimized images
 
 const Hero = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -9,22 +10,24 @@ const Hero = () => {
     "/images/b3.jpg", // Banner 3 image
   ];
 
-  const nextBanner = () => {
+  const nextBanner = useCallback(() => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % banners.length);
-  };
+  }, [banners.length]);
 
   // Auto move banners every 3 seconds
   useEffect(() => {
     const interval = setInterval(nextBanner, 3000);
     return () => clearInterval(interval);
-  }, []);
+  }, [nextBanner]); // Add nextBanner to the dependency array
 
   return (
     <div className="relative overflow-hidden">
-      <img
+      <Image
         src={banners[currentIndex]}
         alt={`Banner ${currentIndex + 1}`}
         className="w-full h-[400px]"
+        width={1920} // Set appropriate width
+        height={400} // Set appropriate height
       />
 
       {/* Dots */}
