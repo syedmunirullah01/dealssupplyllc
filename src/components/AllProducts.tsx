@@ -1,6 +1,8 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { FaSort } from "react-icons/fa";
 
 const AllProducts: React.FC = () => {
   // Array of 30 product data
@@ -211,42 +213,137 @@ const AllProducts: React.FC = () => {
     },
   ];
 
+  const [currentPage, setCurrentPage] = useState(1);
+  const [productsPerPage] = useState(8); // Show 8 products per page
+  const [sortedProducts, setSortedProducts] = useState(products);
+  const [sortOption, setSortOption] = useState("low-to-high"); // Default sorting by low-to-high BSR
+  const [dropdownOpen, setDropdownOpen] = useState(false); // Dropdown state for sorting
+
+  useEffect(() => {
+    // Sort products by BSR
+    const sorted = [...products];
+    sorted.sort((a, b) => {
+      if (sortOption === "low-to-high") {
+        return a.bsr.localeCompare(b.bsr);
+      } else if (sortOption === "high-to-low") {
+        return b.bsr.localeCompare(a.bsr);
+      }
+      return 0;
+    });
+    setSortedProducts(sorted);
+  }, [sortOption]); // Only depend on sortOption
+
+  // Pagination logic
+  const indexOfLastProduct = currentPage * productsPerPage;
+  const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
+  const currentProducts = sortedProducts.slice(
+    indexOfFirstProduct,
+    indexOfLastProduct
+  );
+
+  // Change page
+  const paginate = (pageNumber: number) => setCurrentPage(pageNumber);
+
   return (
-    <div className="max-w-screen-lg mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 px-6 py-8">
-      {products.map((product) => (
-        <div
-          key={product.id}
-          className="bg-white p-4 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300 ease-in-out"
+    <div className="max-w-screen-lg mx-auto px-6 py-8">
+      {/* Sort by BSR Button */}
+      <div className="flex justify-end mb-6 relative">
+        <button
+          onClick={() => setDropdownOpen(!dropdownOpen)}
+          className="flex items-center space-x-2 p-2 border border-gray-300 rounded-md hover:border-indigo-500 transition-all duration-300"
         >
-          <Link href={`/products/${product.id}`} passHref>
-            <div>
-              <Image
-                src={product.image}
-                alt={product.name}
-                width={500} // You should set dimensions
-                height={300} // Set a fixed height
-                className="w-full h-48 object-cover rounded-lg mb-6"
-              />
-              <h3 className="text-xl font-semibold text-gray-800 mb-2">
-                {product.name}
-              </h3>
-              <div className="flex justify-between text-sm text-gray-600 mb-4">
-                <p className="mb-2">
-                  <strong>MOQ:</strong> {product.moq}
-                </p>
-                <p>
-                  <strong>BSR:</strong> {product.bsr}
-                </p>
+          <FaSort />
+          <span>Sort by BSR</span>
+        </button>
+
+        {/* Dropdown Menu */}
+        {dropdownOpen && (
+          <div className="absolute right-0 mt-2 w-48 bg-white shadow-lg rounded-md border border-gray-300">
+            <ul>
+              <li>
+                <button
+                  onClick={() => {
+                    setSortOption("low-to-high");
+                    setDropdownOpen(false);
+                  }}
+                  className="block w-full text-left px-4 py-2 text-sm text-gray-800 hover:bg-indigo-600 hover:text-white"
+                >
+                  BSR: Low to High
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => {
+                    setSortOption("high-to-low");
+                    setDropdownOpen(false);
+                  }}
+                  className="block w-full text-left px-4 py-2 text-sm text-gray-800 hover:bg-indigo-600 hover:text-white"
+                >
+                  BSR: High to Low
+                </button>
+              </li>
+            </ul>
+          </div>
+        )}
+      </div>
+
+      {/* Display Products */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+        {currentProducts.map((product) => (
+          <div
+            key={product.id}
+            className="bg-white p-4 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300 ease-in-out"
+          >
+            <Link href={`/products/${product.id}`} passHref>
+              <div>
+                <Image
+                  src={product.image}
+                  alt={product.name}
+                  width={500} // Set width
+                  height={300} // Set height
+                  className="w-full h-48 object-cover rounded-lg mb-6"
+                />
+                <h3 className="text-xl font-semibold text-gray-800 mb-2">
+                  {product.name}
+                </h3>
+                <div className="flex justify-between text-sm text-gray-600 mb-4">
+                  <p className="mb-2">
+                    <strong>MOQ:</strong> {product.moq}
+                  </p>
+                  <p>
+                    <strong>BSR:</strong> {product.bsr}
+                  </p>
+                </div>
               </div>
-            </div>
-          </Link>
-          <Link href={`/products/${product.id}`} passHref>
-            <button className="w-full py-2 px-4 bg-blue-600 text-white font-semibold rounded-md hover:bg-blue-700 transition-all duration-300">
-              Apply Wholesale
+            </Link>
+            <Link href={`/products/${product.id}`} passHref>
+              <button className="w-full py-2 px-4 bg-blue-600 text-white font-semibold rounded-md hover:bg-blue-700 transition-all duration-300">
+                Apply Wholesale
+              </button>
+            </Link>
+          </div>
+        ))}
+      </div>
+
+      {/* Pagination */}
+      <div className="flex justify-center space-x-4 mt-6">
+        {Array.from(
+          { length: Math.ceil(products.length / productsPerPage) },
+          (_, index) => (
+            <button
+              key={index + 1}
+              onClick={() => paginate(index + 1)}
+              className={`w-10 h-10 flex items-center justify-center text-sm font-semibold text-gray-800 bg-white border-2 border-gray-300 rounded-full hover:bg-indigo-600 hover:text-white transition-all duration-300 ease-in-out transform ${
+                currentPage === index + 1
+                  ? "bg-indigo-600 text-white border-indigo-600"
+                  : ""
+              }`}
+            >
+              {index + 1}
             </button>
-          </Link>
-        </div>
-      ))}
+          )
+        )}
+      </div>
     </div>
   );
 };
