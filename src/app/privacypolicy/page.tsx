@@ -178,8 +178,8 @@ const PrivacyPolicy: React.FC = () => {
             </h2>
             <p>
               We reserve the right to update and modify this Privacy Policy at
-              any time. Changes will be reflected with the "Last updated" date
-              above.
+              any time. Changes will be reflected with the &quot;Last
+              updated&quot; date above.
             </p>
           </section>
 

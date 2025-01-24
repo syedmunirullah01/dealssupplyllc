@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image"; // Import Image from next/image
 
 const products = [
   {
@@ -57,9 +58,11 @@ const NewArrivals: React.FC = () => {
               <div className="bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow p-5">
                 {/* Product Image */}
                 <div className="overflow-hidden rounded-xl mb-4">
-                  <img
+                  <Image
                     src={product.image}
                     alt={product.name}
+                    width={500} // Set a specific width
+                    height={300} // Set a specific height
                     className="w-full h-60 object-cover rounded-lg transition-transform duration-300 group-hover:scale-105"
                   />
                 </div>

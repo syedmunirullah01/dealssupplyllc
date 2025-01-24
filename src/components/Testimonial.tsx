@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image"; // Import Image from next/image
 
 const Testimonial = () => {
   const testimonials = [
@@ -40,11 +41,15 @@ const Testimonial = () => {
               className="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
             >
               <div className="flex items-center mb-4">
-                <img
-                  src={testimonial.image}
-                  alt={testimonial.name}
-                  className="w-20 h-20 rounded-full object-cover mr-4 border-2 border-gray-300"
-                />
+                <div className="relative w-20 h-20 mr-4">
+                  <Image
+                    src={testimonial.image}
+                    alt={testimonial.name}
+                    layout="fill"
+                    objectFit="cover"
+                    className="rounded-full border-2 border-gray-300"
+                  />
+                </div>
                 <div>
                   <h3 className="text-xl font-semibold text-gray-800 mb-2">
                     {testimonial.name}

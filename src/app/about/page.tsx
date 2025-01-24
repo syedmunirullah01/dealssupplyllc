@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 
 const About: React.FC = () => {
   return (
@@ -32,10 +33,12 @@ const About: React.FC = () => {
             </p>
           </div>
           <div className="lg:w-1/2 flex justify-center items-center">
-            <img
+            <Image
               src="/images/b3.jpg" // Replace with actual image URL
               alt="Deals Supply"
               className="rounded-lg shadow-lg max-w-full h-auto"
+              width={500} // Specify the width
+              height={300} // Specify the height
             />
           </div>
         </div>
@@ -67,10 +70,10 @@ const About: React.FC = () => {
               </h4>
             </div>
             <p className="text-lg text-gray-600">
-              Whether you're purchasing or selling, Deals Supply equips you with
-              the right tools to propel your business forward. Our commitment to
-              customer satisfaction and continuous improvement ensures the best
-              outcomes for your Amazon FBA business.
+              Whether you&apos;re purchasing or selling, Deals Supply equips you
+              with the right tools to propel your business forward. Our
+              commitment to customer satisfaction and continuous improvement
+              ensures the best outcomes for your Amazon FBA business.
             </p>
           </div>
           <div className="bg-white p-8 rounded-lg shadow-xl hover:shadow-2xl transition-all duration-300 ease-in-out">
@@ -112,7 +115,7 @@ const About: React.FC = () => {
                 Comprehensive Inventory Management
               </h4>
               <p className="text-lg text-gray-600">
-                Manage your inventory seamlessly with Deals Supply's
+                Manage your inventory seamlessly with Deals Supply&apos;s
                 comprehensive tools, designed to help you optimize product sales
                 and gain insights into your business performance.
               </p>
@@ -124,7 +127,8 @@ const About: React.FC = () => {
               <p className="text-lg text-gray-600">
                 Our customer-first approach means we focus on providing
                 personalized, efficient service with every transaction. Whether
-                you're buying or selling, we’re here to help you succeed.
+                you&apos;re buying or selling, we&apos;re here to help you
+                succeed.
               </p>
             </div>
           </div>

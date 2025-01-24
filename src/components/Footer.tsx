@@ -9,6 +9,7 @@ import {
   FaLinkedin,
 } from "react-icons/fa";
 import Link from "next/link"; // Import Link for internal navigation
+import Image from "next/image"; // Import Image from next/image
 
 const Footer = () => {
   return (
@@ -17,9 +18,11 @@ const Footer = () => {
         {/* Column 1: Logo and Description */}
         <div>
           <div className="flex items-center mb-4">
-            <img
+            <Image
               src="/images/logo.jpg" // Add your logo here
               alt="Logo"
+              width={192} // Specify the width of the image
+              height={48} // Specify the height of the image
               className="w-48 h-auto"
             />
           </div>
@@ -54,7 +57,7 @@ const Footer = () => {
               </Link>
             </li>
             <li>
-              <Link href="/privacy-policy" className="hover:text-blue-600">
+              <Link href="/privacypolicy" className="hover:text-blue-600">
                 Privacy Policy
               </Link>
             </li>

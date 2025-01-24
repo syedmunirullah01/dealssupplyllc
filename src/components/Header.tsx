@@ -4,6 +4,7 @@ import {
   HeartIcon,
   ShoppingCartIcon,
 } from "@heroicons/react/24/outline";
+import Image from "next/image"; // Import Image from next/image
 
 const Header: React.FC = () => {
   return (
@@ -11,7 +12,13 @@ const Header: React.FC = () => {
       <div className="max-w-screen-lg mx-auto py-4 px-6 flex items-center justify-between">
         {/* Logo */}
         <div className="flex items-center">
-          <img src="images/logo.jpg" alt="Logo" className="w-40 h-auto" />
+          <Image
+            src="/images/logo.jpg" // Add your logo here
+            alt="Logo"
+            width={160} // Set your logo width
+            height={40} // Set your logo height
+            className="w-40 h-auto"
+          />
         </div>
 
         {/* Search Bar */}

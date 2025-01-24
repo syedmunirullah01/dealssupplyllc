@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image"; // Import Image from next/image
 
 const Hero: React.FC = () => {
   return (
@@ -8,10 +9,12 @@ const Hero: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
           {/* First Larger Deal - Vertical Bigger Box */}
           <div className="col-span-3 h-[450px] rounded-lg shadow-lg relative">
-            <img
+            <Image
               src="/images/b3.jpg" // Replace with actual image URL
               alt="Big Deal"
-              className="w-full h-full object-cover rounded-lg absolute top-0 left-0"
+              layout="fill"
+              objectFit="cover"
+              className="rounded-lg absolute top-0 left-0"
             />
             <div className="text-orange-600 p-6 absolute bottom-6 left-6">
               <h1 className="text-5xl font-bold">
@@ -26,11 +29,13 @@ const Hero: React.FC = () => {
           </div>
 
           {/* Second Smaller Deal (Right of Big Deal) */}
-          <div className="col-span-2  h-[300px] rounded-lg shadow-lg relative">
-            <img
+          <div className="col-span-2 h-[300px] rounded-lg shadow-lg relative">
+            <Image
               src="/images/b4.jpg" // Replace with actual image URL
               alt="Medium Deal"
-              className="w-full h-full object-cover rounded-lg absolute top-0 left-0"
+              layout="fill"
+              objectFit="cover"
+              className="rounded-lg absolute top-0 left-0"
             />
             <div className="text-yellow-300 p-6 absolute bottom-6 left-6 top-2">
               <h1 className="text-2xl font-bold">
@@ -50,20 +55,22 @@ const Hero: React.FC = () => {
 
           {/* Third Deal (Spans Full Width and Below the First Deal) */}
           <div className="bg-yellow-500 h-72 rounded-lg shadow-lg col-span-3 relative">
-            <img
+            <Image
               src="/images/b5.jpg" // Replace with actual image URL
               alt="Small Deal"
-              className="w-full h-full object-cover rounded-lg absolute top-0 left-0"
+              layout="fill"
+              objectFit="cover"
+              className="rounded-lg absolute top-0 left-0"
             />
             <div className="text-blue-300 p-6 absolute bottom-6 left-6">
               <h1 className="text-4xl font-bold">
                 Unlock Massive Savings on Bulk Purchases!
               </h1>
               <p className="mt-2 font-bold text-blue-200">
-                At Amazon FBA Supplier, we're your trusted wholesale
-                distribution partner. We're offering exclusive deals for Amazon
-                FBA sellers to get access to top-quality products at unbeatable
-                prices.
+                At Amazon FBA Supplier, we&apos;re your trusted wholesale
+                distribution partner. We&apos;re offering exclusive deals for
+                Amazon FBA sellers to get access to top-quality products at
+                unbeatable prices.
               </p>
               <button className="mt-4 bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700">
                 Apply for Bulk Discounts
@@ -72,11 +79,13 @@ const Hero: React.FC = () => {
           </div>
 
           {/* Single Larger Deal Below Small Deal */}
-          <div className="col-span-2  h-72 rounded-lg shadow-lg relative">
-            <img
+          <div className="col-span-2 h-72 rounded-lg shadow-lg relative">
+            <Image
               src="/images/b6.jpg" // Replace with actual image URL
               alt="Large Deal"
-              className="w-full h-full object-cover rounded-lg absolute top-0 left-0"
+              layout="fill"
+              objectFit="cover"
+              className="rounded-lg absolute top-0 left-0"
             />
             <div className="text-orange-600 p-6 absolute bottom-6 left-6">
               <h2 className="text-2xl font-bold">

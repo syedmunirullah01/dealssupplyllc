@@ -45,7 +45,7 @@ const Banner: React.FC = () => {
             </h3>
             <p className="mt-2 text-lg">
               Hurry, Limited Time Only! Get exclusive deals on your favorite
-              products before they're gone.
+              products before they&apos;re gone.
             </p>
             <button className="mt-4 px-6 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-all duration-200">
               Shop Now

@@ -27,7 +27,7 @@ const Services: React.FC = () => {
               Unmatched Value and Expertise
             </h2>
             <p className="text-gray-700 leading-relaxed">
-              Regardless of your business size or niche, we're committed to
+              Regardless of your business size or niche, we&apos;re committed to
               offering deals lower than typical wholesale prices, maximizing
               your return on investment.
             </p>
@@ -51,8 +51,8 @@ const Services: React.FC = () => {
               Trusted Source for Suppliers
             </h2>
             <p className="text-gray-700 leading-relaxed">
-              Whether you're a small startup or a large corporation, we make
-              your experience seamless. Trust us for top-tier products and
+              Whether you&apos;re a small startup or a large corporation, we
+              make your experience seamless. Trust us for top-tier products and
               services.
             </p>
           </div>
@@ -64,8 +64,8 @@ const Services: React.FC = () => {
             Ready to Save Big on Wholesale Deals?
           </h2>
           <p className="text-gray-700 text-lg mb-6">
-            Don't miss out on incredible discounts—start saving big with Deals
-            Supply today!
+            Don&apos;t miss out on incredible discounts—start saving big with
+            Deals Supply today!
           </p>
           <button className="px-8 py-3 bg-yellow-500 text-white text-lg font-semibold rounded-lg hover:bg-yellow-600 transition-all duration-300">
             Explore Our Deals
