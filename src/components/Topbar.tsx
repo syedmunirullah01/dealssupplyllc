@@ -1,4 +1,5 @@
 import { QuestionMarkCircleIcon } from "@heroicons/react/20/solid";
+import Link from "next/link";
 import React from "react";
 
 const TopBar: React.FC = () => {
@@ -20,9 +21,11 @@ const TopBar: React.FC = () => {
           <div className="h-6 border-l border-gray-400"></div>
 
           {/* Apply Wholesale Button */}
-          <button className="px-6 py-2 bg-yellow-500 text-black font-semibold rounded-lg hover:bg-yellow-600 transition-all duration-300">
-            Apply Wholesale
-          </button>
+          <Link href="/applywholesale">
+            <button className="px-6 py-2 bg-yellow-500 text-black font-semibold rounded-lg hover:bg-yellow-600 transition-all duration-300">
+              Apply Wholesale
+            </button>
+          </Link>
         </div>
       </div>
     </div>

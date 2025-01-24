@@ -324,7 +324,7 @@ const AllProducts: React.FC = () => {
                 </div>
               </div>
             </Link>
-            <Link href={`/products/${product.id}`} passHref>
+            <Link href= "/applywholesale">
               <button className="w-full py-2 px-4 bg-blue-600 text-white font-semibold rounded-md hover:bg-blue-700 transition-all duration-300">
                 Apply Wholesale
               </button>

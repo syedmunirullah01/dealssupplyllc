@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image"; // Import Image from next/image
+import Link from "next/link";
 
 const Hero: React.FC = () => {
   return (
@@ -22,9 +23,11 @@ const Hero: React.FC = () => {
                 Distribution Services
               </h1>
               {/* Apply Wholesale Button */}
-              <button className="mt-4 px-6 py-3 bg-yellow-500 text-black font-semibold rounded-lg hover:bg-yellow-400 transition-all duration-300">
-                Apply Wholesale
-              </button>
+              <Link href="/applywholesale">
+                <button className="mt-4 px-6 py-3 bg-yellow-500 text-black font-semibold rounded-lg hover:bg-yellow-400 transition-all duration-300">
+                  Apply Wholesale
+                </button>
+              </Link>
             </div>
           </div>
 
@@ -46,9 +49,11 @@ const Hero: React.FC = () => {
                 Amazon FBA Suppliers wholesale products.
               </p>
               {/* Contact Us Button */}
-              <button className=" mt-2 px-6 py-3 bg-orange-600 text-white font-semibold rounded-lg hover:bg-orange-800 transition-all duration-300">
-                Contact Us
-              </button>
+              <Link href="/contact">
+                <button className=" mt-2 px-6 py-3 bg-orange-600 text-white font-semibold rounded-lg hover:bg-orange-800 transition-all duration-300">
+                  Contact Us
+                </button>
+              </Link>
             </div>
           </div>
 
@@ -65,9 +70,11 @@ const Hero: React.FC = () => {
               <h2 className="text-4xl sm:text-3xl font-bold">
                 Save Big on Bulk Orders!
               </h2>
-              <button className="mt-4 bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700">
-                Apply for Bulk Discounts
-              </button>
+              <Link href="/products">
+                <button className="mt-4 bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700">
+                  Apply for Bulk Discounts
+                </button>
+              </Link>
             </div>
           </div>
 

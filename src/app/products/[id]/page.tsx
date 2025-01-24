@@ -319,7 +319,7 @@ const ProductPage = () => {
               exercitationem mollitia.
             </p>
             <button className="w-fit rounded-lg mt-4 px-4 py-2 items-center gap-3 text-white bg-[#029FAE] flex">
-              <BsCartDash /> <Link href="/cart">Apply Wholesale</Link>
+              <BsCartDash /> <Link href="/applywholesale">Apply Wholesale</Link>
             </button>
           </div>
         </div>
