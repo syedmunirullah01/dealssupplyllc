@@ -10,14 +10,7 @@ const products = [
     bsr: 619,
     buttonColor: "bg-indigo-600 hover:bg-indigo-700",
   },
-  {
-    id: 2,
-    name: "Crystal Light",
-    image: "/images/p2.jpg",
-    moq: 300,
-    bsr: 75,
-    buttonColor: "bg-pink-600 hover:bg-pink-700",
-  },
+  
   {
     id: 3,
     name: "KIND Minis",
