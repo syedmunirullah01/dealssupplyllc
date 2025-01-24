@@ -16,8 +16,8 @@ const Hero: React.FC = () => {
               objectFit="cover"
               className="rounded-lg absolute top-0 left-0"
             />
-            <div className="text-orange-600 p-6 absolute bottom-6 left-6">
-              <h1 className="text-5xl font-bold">
+            <div className="text-orange-600 p-6 absolute bottom-6 left-6 max-w-[90%] sm:max-w-[80%]">
+              <h1 className="text-4xl sm:text-3xl font-bold">
                 Welcome To Amazon FBA Supplier FBA Your Trusted Wholesale
                 Distribution Services
               </h1>
@@ -37,17 +37,16 @@ const Hero: React.FC = () => {
               objectFit="cover"
               className="rounded-lg absolute top-0 left-0"
             />
-            <div className="text-yellow-300 p-6 absolute bottom-6 left-6 top-2">
-              <h1 className="text-2xl font-bold">
+            <div className="text-yellow-300 p-6 absolute bottom-6 left-6  max-w-[90%] sm:max-w-[80%]">
+              <h2 className="text-2xl font-bold">
                 Trusted Amazon FBA Suppliers for FBA Sellers
-              </h1>
-              <p className="mt-2">
+              </h2>
+              <p className="mt-2 text-sm sm:text-base">
                 At Deals Supply, we provide a diverse range of high-quality
-                Amazon FBA Suppliers wholesale products designed to meet the
-                needs of Amazon FBA Suppliers and other businesses.
+                Amazon FBA Suppliers wholesale products.
               </p>
               {/* Contact Us Button */}
-              <button className="mt-4 px-6 py-3 bg-orange-600 text-white font-semibold rounded-lg hover:bg-orange-800 transition-all duration-300">
+              <button className=" mt-2 px-6 py-3 bg-orange-600 text-white font-semibold rounded-lg hover:bg-orange-800 transition-all duration-300">
                 Contact Us
               </button>
             </div>
@@ -62,15 +61,13 @@ const Hero: React.FC = () => {
               objectFit="cover"
               className="rounded-lg absolute top-0 left-0"
             />
-            <div className="text-blue-300 p-6 absolute bottom-6 left-6">
-              <h1 className="text-4xl font-bold">
+            <div className="text-blue-300 p-6 absolute bottom-6 left-6 max-w-[90%] sm:max-w-[80%]">
+              <h1 className="text-4xl sm:text-3xl font-bold">
                 Unlock Massive Savings on Bulk Purchases!
               </h1>
-              <p className="mt-2 font-bold text-blue-200">
+              <p className="mt-2 font-bold text-blue-200 text-sm sm:text-base">
                 At Amazon FBA Supplier, we&apos;re your trusted wholesale
-                distribution partner. We&apos;re offering exclusive deals for
-                Amazon FBA sellers to get access to top-quality products at
-                unbeatable prices.
+                distribution partner. 
               </p>
               <button className="mt-4 bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700">
                 Apply for Bulk Discounts
@@ -87,11 +84,11 @@ const Hero: React.FC = () => {
               objectFit="cover"
               className="rounded-lg absolute top-0 left-0"
             />
-            <div className="text-orange-600 p-6 absolute bottom-6 left-6">
-              <h2 className="text-2xl font-bold">
+            <div className="text-orange-600 p-6 absolute bottom-6 left-6 max-w-[90%] sm:max-w-[80%]">
+              <h2 className="text-2xl sm:text-xl font-bold">
                 Get It Fast with Rapid Shipping!
               </h2>
-              <p className="mt-2">
+              <p className="mt-2 text-sm sm:text-base">
                 Get your products delivered fast with our Rapid Shipping! Enjoy
                 quick, reliable delivery straight to your doorstep.
               </p>
