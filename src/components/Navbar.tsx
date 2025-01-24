@@ -1,10 +1,11 @@
 "use client";
 import React, { useState } from "react";
 import Link from "next/link"; // Import Link from next/link
-import { FiChevronDown } from "react-icons/fi"; // Import the React icon
+import { FiChevronDown, FiMenu, FiX } from "react-icons/fi"; // Import the React icon
 
 const Navbar: React.FC = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false); // Mobile menu state
 
   return (
     <nav className="max-w-screen-lg mx-auto bg-white text-black py-4 px-6 border-b border-gray-300">
@@ -77,17 +78,72 @@ const Navbar: React.FC = () => {
             href="https://docs.google.com/spreadsheets/d/1Ca3bF9Ctv6hTyWvNnn_lv1MQQDAixj-aUTdZCJhhvvI/edit?gid=1625076185#gid=1625076185"
             className="hover:text-gray-300"
           >
-            Download Produc List
+            Download Product List
           </Link>
         </div>
 
         {/* Right Side - Responsive Menu Button */}
         <div className="md:hidden">
-          <button className="text-white hover:text-gray-300">
-            {/* Add a menu icon here if needed */}☰
+          <button
+            className="text-black hover:text-gray-300"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} // Toggle mobile menu
+          >
+            {isMobileMenuOpen ? (
+              <FiX className="text-2xl" /> // Close icon
+            ) : (
+              <FiMenu className="text-2xl" /> // Menu icon
+            )}
           </button>
         </div>
       </div>
+
+      {/* Mobile Menu */}
+      {isMobileMenuOpen && (
+        <div className="md:hidden mt-4 space-y-4">
+          <Link
+            href="/"
+            className="block text-lg hover:text-gray-300"
+            onClick={() => setIsMobileMenuOpen(false)}
+          >
+            Home
+          </Link>
+          <Link
+            href="/about"
+            className="block text-lg hover:text-gray-300"
+            onClick={() => setIsMobileMenuOpen(false)}
+          >
+            About
+          </Link>
+          <Link
+            href="/shop"
+            className="block text-lg hover:text-gray-300"
+            onClick={() => setIsMobileMenuOpen(false)}
+          >
+            Shop
+          </Link>
+          <Link
+            href="/contact"
+            className="block text-lg hover:text-gray-300"
+            onClick={() => setIsMobileMenuOpen(false)}
+          >
+            Contact
+          </Link>
+          <Link
+            href="/services"
+            className="block text-lg hover:text-gray-300"
+            onClick={() => setIsMobileMenuOpen(false)}
+          >
+            Services
+          </Link>
+          <Link
+            href="https://docs.google.com/spreadsheets/d/1Ca3bF9Ctv6hTyWvNnn_lv1MQQDAixj-aUTdZCJhhvvI/edit?gid=1625076185#gid=1625076185"
+            className="block text-lg hover:text-gray-300"
+            onClick={() => setIsMobileMenuOpen(false)}
+          >
+            Download Product List
+          </Link>
+        </div>
+      )}
     </nav>
   );
 };
