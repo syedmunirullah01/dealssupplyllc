@@ -62,9 +62,9 @@ const Hero: React.FC = () => {
               className="rounded-lg absolute top-0 left-0"
             />
             <div className="text-blue-300 p-6 absolute bottom-6 left-6 max-w-[90%] sm:max-w-[80%]">
-              <h1 className="text-4xl sm:text-3xl font-bold">
-                Unlock Massive Savings on Bulk Purchases!
-              </h1>
+              <h2 className="text-4xl sm:text-3xl font-bold">
+                Save Big on Bulk Orders!
+              </h2>
               <button className="mt-4 bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700">
                 Apply for Bulk Discounts
               </button>

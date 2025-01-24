@@ -27,8 +27,12 @@ const Footer = () => {
             />
           </div>
           <p className="text-sm">
-            Welcome to our website! We offer high-quality products at
-            competitive prices. Enjoy your shopping experience with us.
+            Deals Supply delivered a procurement company dedicated to curating
+            niche products for our valued customers. As top wholesale suppliers
+            for Amazon sellers, we provide high-quality products to support your
+            Amazon FBA business. Based in the USA, we are among the best
+            distributors for Amazon FBA, offering a comprehensive list of Amazon
+            FBA suppliers and wholesale distributors.
           </p>
         </div>
 
