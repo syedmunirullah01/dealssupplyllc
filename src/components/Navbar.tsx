@@ -8,11 +8,12 @@ const Navbar: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false); // Mobile menu state
 
   return (
-    <nav className="max-w-screen-lg mx-auto bg-white text-black py-4 px-6 border-b border-gray-300">
-      <div className="flex justify-between items-center">
+    <nav className="w-full bg-white text-black py-4 px-6 border-b border-gray-300">
+      {/* Container for content, max width applied here */}
+      <div className="max-w-screen-lg mx-auto flex justify-between items-center">
         {/* Center - Navigation Links */}
         <div className="hidden md:flex items-center space-x-12">
-          <Link href="/" className="hover:text-gray-300">
+          <Link href="/" className="ml-6 hover:text-gray-300">
             Home
           </Link>
 
@@ -31,7 +32,7 @@ const Navbar: React.FC = () => {
               />
             </button>
             {isDropdownOpen && (
-              <div className="absolute top-full left-0 mt-2 bg-white text-gray-800 shadow-lg rounded-md w-48">
+              <div className="absolute top-full left-0 mt-2 bg-white text-gray-800 shadow-lg rounded-md w-48 z-50">
                 <ul>
                   <li>
                     <Link
@@ -65,8 +66,8 @@ const Navbar: React.FC = () => {
           <Link href="/about" className="hover:text-gray-300">
             About
           </Link>
-          <Link href="/shop" className="hover:text-gray-300">
-            Shop
+          <Link href="/products" className="hover:text-gray-300">
+            Products
           </Link>
           <Link href="/contact" className="hover:text-gray-300">
             Contact
@@ -115,11 +116,11 @@ const Navbar: React.FC = () => {
             About
           </Link>
           <Link
-            href="/shop"
+            href="/products"
             className="block text-lg hover:text-gray-300"
             onClick={() => setIsMobileMenuOpen(false)}
           >
-            Shop
+            Products
           </Link>
           <Link
             href="/contact"
