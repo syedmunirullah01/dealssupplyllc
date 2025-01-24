@@ -17,7 +17,10 @@
     "react-slick": "^0.30.3",
     "slick-carousel": "^1.8.1",
     "swiper": "^11.2.1"
-  },
+  },"engines": {
+  "node": "14.x"
+}
+,
   "devDependencies": {
     "@eslint/eslintrc": "^3",
     "@types/node": "^20",
